@@ -1,0 +1,50 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "react"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:flowtype/recommended"],
+  "root": true,
+  "parserOptions": {
+    "babelOptions": {
+      "configFile": "./dev/babel/babel-preset-stage2"
+    },
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "modules": true,
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-unused-vars": [1, {"varsIgnorePattern": "(^_|log)", "args": "all", "argsIgnorePattern": "(^_|^req$|^res$|^next$)"}],
+    "no-console": 0,
+    "no-constant-condition": 0,
+    "no-async-promise-executor": 1,
+    "no-redeclare": 1,
+    "no-prototype-builtins": 1,
+    "require-atomic-updates": 1,
+    "semi": ["error", "always"],
+    "no-class-assign": 0,
+    "flowtype/space-after-type-colon": [
+      2,
+      "always",
+      {"allowLineBreak": true}
+    ],
+    "flowtype/no-types-missing-file-annotation": 0,
+    "no-undef": "off"
+  }
+}
